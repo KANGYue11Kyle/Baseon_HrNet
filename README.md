@@ -90,9 +90,6 @@ python tools/vis.py --cfg seg_hrnet_ocr_w18_surgery_one.yaml --weight best.pth
 
 训练过程中自动筛选出的最优 checkpoint 已保存为 **`best.pth`**。
 
-## 📄 开源协议
-
-> TODO：补充开源协议（如 MIT、Apache 2.0 等）
 
 ## 🙏 致谢
 
