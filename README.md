@@ -1,96 +1,96 @@
 # Baseon_HrNet
-# 基于 HRNet 的手术图像分割项目
+# Surgical Image Segmentation Project Based on HRNet
 
-基于 [HRNet](https://github.com/HRNet/HRNet-Semantic-Segmentation)（High-Resolution Network）实现的手术图像语义分割项目，采用 HRNet + OCR 结构，支持模型训练、验证、checkpoint 自动筛选与可视化。
+A surgical image semantic segmentation project implemented based on [HRNet](https://github.com/HRNet/HRNet-Semantic-Segmentation) (High-Resolution Network). It adopts the HRNet + OCR architecture and supports model training, validation, automatic checkpoint selection, and visualization.
 
-## 📁 仓库文件说明
+## 📁 Repository File Description
 
 ```
 .
-├── models/                                        # HRNet 相关模型定义代码
-├── tools/                                         # 训练、验证及可视化工具脚本
-├── best.pth                                       # 训练过程中自动筛选出的最优 checkpoint 权重文件
-├── hrnet.txt                                      # 本次训练的结果文本记录
-├── seg_hrnet_ocr_w18_surgery_one.yaml             # 模型训练配置文件
-├── vis1.png                                       # 模型推理输出的可视化结果图片
-└── vis2.png                                       # 模型推理输出的可视化结果图片
+├── models/                                        # HRNet-related model definition code
+├── tools/                                         # Training, validation, and visualization utility scripts
+├── best.pth                                       # Optimal checkpoint weight file automatically selected during training
+├── hrnet.txt                                      # Text record of the results of this training run
+├── seg_hrnet_ocr_w18_surgery_one.yaml             # Model training configuration file
+├── vis1.png                                       # Visualization result image produced by model inference
+└── vis2.png                                       # Visualization result image produced by model inference
 ```
 
-## 🔍 模块说明
+## 🔍 Module Description
 
-| 文件 / 目录 | 说明 |
+| File / Directory | Description |
 | --- | --- |
-| `models/` | 存放 HRNet 相关模型定义代码 |
-| `tools/` | 包含训练、验证及可视化工具脚本 |
-| `best.pth` | 训练过程中自动筛选出的最优 checkpoint 二进制权重文件 |
-| `hrnet.txt` | 本次训练的结果文本记录 |
-| `seg_hrnet_ocr_w18_surgery_one.yaml` | 模型训练配置文件 |
-| `vis1.png` / `vis2.png` | 模型推理输出的可视化结果图片 |
+| `models/` | Stores HRNet-related model definition code |
+| `tools/` | Contains training, validation, and visualization utility scripts |
+| `best.pth` | Optimal checkpoint binary weight file automatically selected during training |
+| `hrnet.txt` | Text record of the results of this training run |
+| `seg_hrnet_ocr_w18_surgery_one.yaml` | Model training configuration file |
+| `vis1.png` / `vis2.png` | Visualization result images produced by model inference |
 
-## 🧠 模型结构
+## 🧠 Model Architecture
 
-- **主干网络**：HRNet-W18
-- **分割头**：OCR（Object-Contextual Representations）
-- **任务**：手术图像语义分割
+- **Backbone**: HRNet-W18
+- **Segmentation Head**: OCR (Object-Contextual Representations)
+- **Task**: Surgical image semantic segmentation
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境依赖
+### Environment Dependencies
 
-> TODO：补充 Python、PyTorch、CUDA 版本及依赖安装命令
+> TODO: Add Python, PyTorch, CUDA versions and dependency installation commands
 
 ```bash
-# 示例
+# Example
 pip install -r requirements.txt
 ```
 
-### 模型训练
+### Model Training
 
-使用配置文件 `seg_hrnet_ocr_w18_surgery_one.yaml` 启动训练：
+Launch training using the configuration file `seg_hrnet_ocr_w18_surgery_one.yaml`:
 
 ```bash
-# 示例（具体命令请根据 tools/ 下脚本调整）
+# Example (adjust the specific command according to the scripts under tools/)
 python tools/train.py --cfg seg_hrnet_ocr_w18_surgery_one.yaml
 ```
 
-训练过程中会自动筛选最优 checkpoint，并保存为 `best.pth`。
+During training, the optimal checkpoint is automatically selected and saved as `best.pth`.
 
-### 模型验证 / 推理
+### Model Validation / Inference
 
-> TODO：补充验证与推理命令
+> TODO: Add validation and inference commands
 
 ```bash
-# 示例
+# Example
 python tools/val.py --cfg seg_hrnet_ocr_w18_surgery_one.yaml --weight best.pth
 ```
 
-### 结果可视化
+### Result Visualization
 
-> TODO：补充可视化脚本调用方式
+> TODO: Add instructions for invoking the visualization script
 
 ```bash
-# 示例
+# Example
 python tools/vis.py --cfg seg_hrnet_ocr_w18_surgery_one.yaml --weight best.pth
 ```
 
-可视化结果见 `vis1.png`、`vis2.png`。
+Visualization results are shown in `vis1.png` and `vis2.png`.
 
-## 📊 训练结果
+## 📊 Training Results
 
-训练结果记录于 `hrnet.txt`。
+Training results are recorded in `hrnet.txt`.
 
-> TODO：可在此处补充关键指标（mIoU、Accuracy 等）与 `vis1.png` / `vis2.png` 的效果展示
+> TODO: Key metrics (mIoU, Accuracy, etc.) and demonstrations of the results in `vis1.png` / `vis2.png` can be added here
 
-| 可视化结果 |
+| Visualization Results |
 | --- |
 | ![vis1](vis1.png) |
 | ![vis2](vis2.png) |
 
-## 🏆 最优权重
+## 🏆 Optimal Weights
 
-训练过程中自动筛选出的最优 checkpoint 已保存为 **`best.pth`**。
+The optimal checkpoint automatically selected during training has been saved as **`best.pth`**.
 
 
-## 🙏 致谢
+## 🙏 Acknowledgements
 
-本项目基于 [HRNet-Semantic-Segmentation](https://github.com/HRNet/HRNet-Semantic-Segmentation) 实现，感谢原作者的开源工作。
+This project is implemented based on [HRNet-Semantic-Segmentation](https://github.com/HRNet/HRNet-Semantic-Segmentation). We thank the original authors for their open-source work.
